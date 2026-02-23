@@ -1,0 +1,36 @@
+# =========================
+# IntelliJ IDEA
+# =========================
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# =========================
+# Kotlin / Java build output
+# =========================
+*.class
+*.jar
+*.log
+build/
+dist/
+
+# =========================
+# Local app data (DO NOT PUSH)
+# =========================
+data/accountstorage.txt
+
+# (optional) ignore entire data folder if you want
+# data/
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Linux temp files
+# =========================
+*~
