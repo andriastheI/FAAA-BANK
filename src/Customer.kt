@@ -76,7 +76,7 @@ class Customer(
      */
     fun setName(newName: String?): Boolean {
         if (!newName.isNullOrBlank() && checkName(newName)) {
-            username = newName.trim()
+            username = newName
             return true
         }
         return false
@@ -178,7 +178,7 @@ class Customer(
      */
     fun checkName(inName: String): Boolean {
         // Only alphabetic characters allowed.
-        return inName.matches(Regex("^[A-Za-z]+$"))
+        return inName.matches(Regex("^[A-Za-z]+$")) && inName.length >=6
     }
 
     /**

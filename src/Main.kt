@@ -142,7 +142,7 @@ class Main {
                 val app = Main()
 
                 // Main application window setup.
-                val frame = JFrame("FAAFO BANK")
+                val frame = JFrame("FAAA LOAN BANK")
                 frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
                 frame.setSize(500, 400)
                 frame.setLocationRelativeTo(null)
@@ -157,9 +157,9 @@ class Main {
                 val homePanel = JPanel().apply { layout = null }
 
                 // Application title label.
-                val titleLabel = JLabel("FAAFO BANK").apply {
+                val titleLabel = JLabel("FAAA BANK").apply {
                     font = font.deriveFont(32f)
-                    setBounds(140, 20, 240, 40)
+                    setBounds(140, 20, 200, 40)
                 }
                 homePanel.add(titleLabel)
 
@@ -355,7 +355,7 @@ class Main {
                 // Page title label.
                 val changePasswordTitleLabel = JLabel("CHANGE PASSWORD").apply {
                     font = font.deriveFont(Font.BOLD, 20f)
-                    setBounds(80, 50, 120, 30)
+                    setBounds(80, 50, 200, 30)
                 }
 
                 // Current password prompt + input field.
@@ -432,7 +432,7 @@ class Main {
 
                 // Username policy reminder.
                 val usernameInfoLabelUp = JLabel("* must be 6 characters(only letters) or more").apply {
-                    setBounds(160, 138, 250, 25)
+                    setBounds(160, 138, 300, 25)
                 }
 
                 // Age prompt + input field.
@@ -579,7 +579,7 @@ class Main {
                     val newCustomer = Customer()
 
                     // Collect raw input values from the Sign Up form.
-                    val userInName = userFnameInputUp.text.trim()
+                    val userInName = userFnameInputUp.text
                     val ageText = userAgeInputUp.text.trim()
                     val userIdText = userIdInputUp.text.trim()
                     val passwordChars = userPasswordInputUp.password
@@ -764,6 +764,16 @@ class Main {
                             "Password Invalid",
                             JOptionPane.ERROR_MESSAGE
                         )
+                        // Clear UI fields after success.
+                        currentPasswordInput.text = ""
+                        newPasswordInput.text = ""
+                        confirmPasswordInput.text = ""
+
+                        // Wipe password arrays from memory after use.
+                        oldPasswordChars.fill('\u0000')
+                        newPasswordChars.fill('\u0000')
+                        confirmPasswordChars.fill('\u0000')
+
                         return@addActionListener
                     }
 
@@ -775,6 +785,16 @@ class Main {
                             "New Password Invalid",
                             JOptionPane.ERROR_MESSAGE
                         )
+                        // Clear UI fields after success.
+                        currentPasswordInput.text = ""
+                        newPasswordInput.text = ""
+                        confirmPasswordInput.text = ""
+
+                        // Wipe password arrays from memory after use.
+                        oldPasswordChars.fill('\u0000')
+                        newPasswordChars.fill('\u0000')
+                        confirmPasswordChars.fill('\u0000')
+
                         return@addActionListener
                     }
 
